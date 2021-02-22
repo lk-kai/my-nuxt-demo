@@ -1,65 +1,42 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        my-nuxt-demo
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div>
+    <ul>
+      <li v-for="item in movelist" :key="item.id">
+        title:{{ item.title }} ---- id:{{ item.id }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-export default {};
+import axios from "../plugins/axios";
+
+export default {
+  // 在nuxt中 只有created beforecreate这两个钩子函数能正常使用
+  // 异步请求不能在created中执行 应在asyncData中使用 这个函数不能使用this
+  created() {},
+  async asyncData() {
+    const { data } = await axios.get("/in_theaters");
+    return { movelist: data };
+  },
+  data() {
+    return {
+      movelist: []
+    };
+  }
+};
 </script>
-
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+ul {
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+ul li {
+  margin: 10px;
+  padding-left: 5px;
+  border: 1px solid red;
+  border-radius: 5px;
 }
 </style>
