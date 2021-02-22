@@ -1,6 +1,5 @@
 {
-  "in_theaters": [
-    {
+  "in_theaters": [{
       "id": 1,
       "title": "黄金兄弟",
       "rating": 5.3,
@@ -22,8 +21,7 @@
       "img": "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2529206747.jpg"
     }
   ],
-  "coming_soon": [
-    {
+  "coming_soon": [{
       "id": 4,
       "title": "影",
       "rating": 0,
@@ -42,11 +40,10 @@
       "title": "无双",
       "rating": 0,
       "genres": ["动作", "犯罪"],
-      "img": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2535096871.jpg"
+      "img": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2533384240.jpg"
     }
   ],
-  "top250": [
-    {
+  "top250": [{
       "id": 7,
       "title": "肖申克的救赎",
       "rating": 9.6,
@@ -58,7 +55,7 @@
       "title": "霸王别姬",
       "rating": 9.6,
       "genres": ["剧情", "爱情", "同性"],
-      "img": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.jpg"
+      "img": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg"
     },
     {
       "id": 9,
@@ -68,8 +65,7 @@
       "img": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg"
     }
   ],
-  "details": [
-    {
+  "details": [{
       "id": 11,
       "in_theaterId": 1,
       "year": 2018,

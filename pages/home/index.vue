@@ -16,4 +16,4 @@ export default {
   }
 };
 </script>
-<style lang=""></style>
+<style lang="" scoped></style>

@@ -15,12 +15,7 @@ export default {
   // 在nuxt中 只有created beforecreate这两个钩子函数能正常使用
   // 异步请求不能在created中执行 应在asyncData中使用 这个函数不能使用this
   created() {},
-  asyncData(context, callback) {
-    axios.get("http://localhost:3301/in_theaters").then(res => {
-      console.log(res.data);
-      callback(null, { movelist: res.data });
-    });
-  },
+  asyncData(context, callback) {},
   layout: "header",
   data() {
     return {
@@ -38,7 +33,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 ul {
   overflow: hidden;
   list-style: none;
