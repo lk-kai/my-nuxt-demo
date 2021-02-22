@@ -1,8 +1,8 @@
 <template>
   <div class="move">
-    <nuxt-link to="/move/in_theaters" tag="div">正在热映</nuxt-link>
-    <nuxt-link to="/move/coming_soon" tag="div">即将上映</nuxt-link>
-    <nuxt-link to="/move/top250" tag="div">top250</nuxt-link>
+    <nuxt-link to="/move/in_theaters" class="move-bar">正在热映</nuxt-link>
+    <nuxt-link to="/move/coming_soon" class="move-bar">即将上映</nuxt-link>
+    <nuxt-link to="/move/top250" class="move-bar">top250</nuxt-link>
   </div>
 </template>
 <script>
@@ -18,12 +18,12 @@ export default {};
   line-height: 50px;
   background-color: black;
 }
-.move div {
+.move-bar {
   flex: 1;
   cursor: pointer;
   color: white;
 }
-.move div:hover {
+.move-bar:hover {
   color: red;
 }
 </style>
