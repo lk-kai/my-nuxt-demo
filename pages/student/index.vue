@@ -11,6 +11,10 @@
 </template>
 <script>
 export default {
+  // 在nuxt中 只有created beforecreate这两个钩子函数能正常使用
+  // 异步请求不能在created中执行 应在asyncData中使用 这个函数不能使用this
+  created() {},
+  asyncData() {},
   layout: "header",
   data() {
     return {
