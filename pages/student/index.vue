@@ -6,6 +6,7 @@
         姓名:{{ item.name }} ---- id:{{ item.id }}
       </li>
     </ul>
+    <el-button type="primary">测试button</el-button>
   </div>
 </template>
 <script>

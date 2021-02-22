@@ -11,10 +11,15 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["./assets/style/index.css"],
+  css: ["./assets/style/index.css", "element-ui/lib/theme-chalk/index.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    {
+      src: "./plugins/Element.js",
+      ssr: true // 这个插件只在服务端起作用
+    }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -36,5 +41,8 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+    // 防止elementui 被多次打包
+    vendor:['element-ui']
+  }
 };
