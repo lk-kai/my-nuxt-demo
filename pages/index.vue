@@ -15,7 +15,11 @@ export default {
   // 在nuxt中 只有created beforecreate这两个钩子函数能正常使用
   // 异步请求不能在created中执行 应在asyncData中使用 这个函数不能使用this
   created() {},
-  async asyncData() {
+  beforeCreate() {
+    // this.$router.push('/move')
+  },
+  async asyncData({ redirect }) {
+    redirect("/move");
     const { data } = await axios.get("/in_theaters");
     return { movelist: data };
   },
